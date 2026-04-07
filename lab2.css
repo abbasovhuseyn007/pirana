@@ -1,0 +1,251 @@
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background: linear-gradient(135deg,#ff9d00,#e0487b);
+color:rgb(237, 5, 5);
+text-align:center;
+}
+
+header{
+padding:30px;
+background:#9e7a7a;
+box-shadow:0 4px 10px rgba(6, 190, 203, 0.5);
+} 
+.products{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+padding:40px;
+}
+
+.card{
+background:#13baba;
+border-radius:15px;
+width:220px;
+padding:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.5);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+
+.price{
+font-size:20px;
+color:#00ffae;
+}
+
+button{
+background:#11e338;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+color:white;
+cursor:pointer;
+margin-top:10px;
+font-size:15px;
+transition:0.3s;
+}
+
+button:hover{
+background:#ec0ee4;
+}
+
+footer{
+margin-top:30px;
+padding:15px;
+background:#7366e4;
+}
+
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+
+.notification {
+    background: #6855e1; 
+    color: #18d2f3;
+    padding: 15px 25px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+
+.fade-out {
+    animation: slideOut 0.5s ease forwards;
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(100%); opacity: 0; }
+}
+/* Səbət Düyməsi */
+#cart-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #07ea13;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+#cart-count { font-size: 16px; font-weight: bold; }
+#cart-panel {
+    position: fixed;
+    bottom: 85px;
+    left: 20px;
+    background: #2a2a40;
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    display: none; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    z-index: 1001;
+}
+#cart-items { list-style: none; padding: 0; text-align: left; max-height: 200px; overflow-y: auto; }
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+.modal-content {
+    background: #1e1e2f;
+    padding: 30px;
+    border-radius: 15px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.modal-content input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #3b5f57;
+    color: white;
+} 
+#cart-icon {
+    position: fixed; bottom: 20px; left: 20px;
+    background: #ff4c4c; padding: 15px; border-radius: 50%;
+    cursor: pointer; font-size: 24px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
+}
+#cart-panel {
+    position: fixed; bottom: 85px; left: 20px;
+    background: #16dada; width: 260px; padding: 15px;
+    border-radius: 10px; display: none; z-index: 1001;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+#cart-items { list-style: none; padding: 0; text-align: left; }
+#cart-items li { display: flex; justify-content: space-between; margin-bottom: 8px; border-bottom: 1px solid #444; padding-bottom: 5px; }
+
+.modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center;
+}
+.modal-content {
+    background: #0ed83a; padding: 30px; border-radius: 15px; width: 320px;
+    display: flex; flex-direction: column; gap: 12px;
+}
+.modal-content input { padding: 12px; border-radius: 5px; border: none; background: #3b3b5f; color: white; }
+
+#notification-container { position: fixed; top: 20px; right: 20px; z-index: 3000; }
+.notification { background: #00ffae; color: #111; padding: 12px 20px; border-radius: 8px; margin-bottom: 10px; animation: slideIn 0.4s ease; }
+@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
+/* Modalın arxa fonu (ekranı örtən qara şəffaf təbəqə) */
+#checkout-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Orta pəncərənin özü */
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* paddingin ölçünü pozmaması üçün */
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.confirm-btn {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirm-btn:hover { background: #219150; }
+.cancel-btn:hover { background: #c0392b; }
